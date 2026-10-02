@@ -1,4 +1,4 @@
-reate a high-fidelity procedural Three.js 3D reconstruction of:
+Create a high-fidelity procedural Three.js 3D reconstruction of:
 
       ★ Glock-18 | Ghost Protocol
       Wear condition: Well-Worn

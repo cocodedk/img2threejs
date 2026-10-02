@@ -2,6 +2,9 @@
 
 Use this reference whenever the model silhouette is acceptable but the render still looks unlike the source image.
 
+Contents: Common Failure Pattern · Material-Pass Requirements · Lighting-Pass Requirements ·
+Screenshot Review · Material & colour lessons (BMX + M9 Doppler) · Candy/anodized colour washes to blue
+
 ## Common Failure Pattern
 
 A procedural object often fails after the shape pass because the render has:

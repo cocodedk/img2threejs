@@ -10,12 +10,7 @@ Use this reference when a model construction pass has just finished.
 4. Inspect the sheet once with your agent's vision and score the global image, relevant visual layers, and each selected semantic feature visible in that pair.
 5. Compare the rendered result to current `ObjectSculptSpec`.
 6. Decide whether the mismatch is caused by the spec, the implementation, lighting/camera, missing evidence, or performance tradeoff.
-7. Choose exactly one action:
-   - `continue`
-   - `refine-spec`
-   - `refine-code`
-   - `request-input`
-   - `stop`
+7. Choose exactly one action: `continue`, `refine-spec`, `refine-code`, `request-input`, or `stop`.
 8. Record the screenshot paths, comparison image, overall score, layer scores, feature scores, and AI critique in `reviewHistory`.
 
 For visual passes, `continue` requires a rendered screenshot, a comparison image, a global AI vision score at or above threshold, and every critical feature at or above its own threshold. Without them, the review is not evidence-backed enough. Pixel comparison code is never the acceptance authority.
@@ -78,9 +73,7 @@ When the reference is a **photograph** and the render is a **procedural reconstr
 - Trust the **palette ΔE / phash / part-presence**, and IoU only **after** scale+translation alignment.
 - Treat `ssim`/`edgeOverlap` vs a photo as advisory, never a hard fail.
 
-The proper fix is a Divine-Eye **reconstruction mode** (reference==photo ⇒ drop pixel-aligned signals, align-then-IoU, palette+objectness) — this is exactly what the deferred **OSIM** objectness signal targets (feature-map similarity is invariant to lighting/background). See `docs/PLAN_1.3_FINAL.md` review log + ws-memories atom `divine-eye-photo-vs-procedural-miscalibration`.
-
-**Update (2026-07-22): the reconstruction-mode rescue now exists.** `divine_eye.py` computes a stdlib
+**The reconstruction-mode rescue (since 2026-07-22).** `divine_eye.py` computes a stdlib
 `objectness` signal (`objectness.py`, OSIM-lite — bg/pose/scale/brightness-invariant HOG cosine) and,
 when a photo-vs-procedural render fails *only* the IoU hard gate but objectness says "same object"
 (≥0.48), it downgrades the confident reject to `probe` and sets `reconstructionModeSuspected:true`. So the

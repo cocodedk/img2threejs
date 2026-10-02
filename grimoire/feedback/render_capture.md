@@ -2,19 +2,15 @@
 
 Use this reference when a procedural Three.js reconstruction has a browser-renderable preview.
 
+Contents: Capture Rule · Deterministic Viewer for Review · Reference Framing Match · Compare By
+Layer · Decision Matrix · AI Vision Scorecard · Feature Tiers · Evidence Format
+
 ## Capture Rule
 
 Each visual build pass should produce at least one rendered screenshot from a named review viewpoint. Use your agent's browser/screenshot tool (Claude Code browser MCP, your agent's in-app browser/preview, or the project's own preview) first. Do not install or download Playwright/Chromium just for this skill; use Playwright or another browser automation path only when the user explicitly allows it or the project already depends on it. If the in-app Browser is unavailable, ask for a screenshot path or use browser tooling that is already present in the target project.
 
 Create a side-by-side review image after capture:
-
-```bash
-../../forge/stage4_review/make_comparison_sheet.py \
-  --reference reference.png \
-  --render render.png \
-  --out comparison.png \
-  --json
-```
+`../../forge/stage4_review/make_comparison_sheet.py --reference reference.png --render render.png --out comparison.png --json`
 
 The script only aligns and packages evidence. It must not calculate the acceptance score. your agent's vision must inspect `comparison.png`.
 

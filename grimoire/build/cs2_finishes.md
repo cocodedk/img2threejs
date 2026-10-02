@@ -5,6 +5,9 @@ reference image is the only required input. A skin name, descriptor (`finishStyl
 `paintSeed`), or an extracted Valve texture are optional layers that add exactness when the user
 supplies them — they never block the default path.
 
+Contents: finish routes (below) · Identity precedence · Finish styles · Float → wear · Paint seed →
+pattern placement · PBR and environment · Complexity tier & detail floor · Honest ceiling
+
 **Two finish routes, chosen by goal — do NOT default to procedural for a reference-match.**
 
 This rulebook does not authorize pistol, rifle, SMG, sniper, heavy, glove, or unknown knife

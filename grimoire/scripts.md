@@ -34,8 +34,8 @@ material-pass locality, lighting-pass real lights). Fix per `intake/quality_cont
 - `check spec.json --pass-id <pass>` — non-zero unless that pass is unlocked or already done.
 - `sync spec.json --in-place` — recompute `sculptPipeline` from `reviewHistory`.
 
-Ordered passes: `blockout → structural-pass → form-refinement → material-pass → lighting-pass →
-interaction-pass → optimization-pass`. A pass unlocks only after the prior pass has a review with
+Ordered passes: `blockout → structural-pass → form-refinement → material-pass → surface-pass →
+lighting-pass → interaction-pass → optimization-pass`. A pass unlocks only after the prior pass has a review with
 `action=continue` backed by a render screenshot, a comparison sheet, a global AI-vision score ≥
 threshold (default 0.7), and every critical feature ≥ its own threshold.
 
@@ -70,3 +70,13 @@ and refuses to patch the spec when confidence < `--target-threshold` (default 0.
 ## _shared/feature_acceptance_policy.py
 Internal helper imported by the orchestrator/validator (`feature_gate_failures`,
 `feature_review_policy`). Enforces the ≤5 critical / ≤3 important feature-tier policy. Not a CLI.
+
+## Other helpers
+- `stage1_intake/bind_detail_properties.py "<description>" [--json]` — maps a plain-language
+  detail/material phrase to Three.js material properties + a primitive hint (keyword rules, no model).
+- `stage2_spec/derive_geometry.py <image> [--samples 24] [--json]` — computes a LatheGeometry
+  profile from the silhouette of a roughly axisymmetric subject instead of eyeballing it.
+- `stage4_review/per_feature.py --targets t.json --scores s.json [--json]` — each feature against
+  its own threshold; non-zero exit when a gating feature fails.
+- `stage3_build/module_cache.py --manifest <path> [--json]` — stats for the per-module factory code cache.
+- `stage2_spec/cs2_adapters.py` — CS2 family adapters (component-tree contract). Imported, not a CLI.

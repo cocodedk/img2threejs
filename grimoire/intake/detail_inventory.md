@@ -5,6 +5,9 @@ identity-defining marks (a bevel highlight, a row of rivets, a stain) get skippe
 agent only eyeballs the whole image once. Scan zone by zone and record every mark as a
 structured `detail`, not as prose.
 
+Contents: The Rule · Taxonomy (gloss, bevel, fastener, linework, contour, seam, stitch, stain,
+scratch, chip, decal, emissive, hole, groove, ridge) · Scan Method · Confidence
+
 ## The Rule
 
 Every `detail` entry records: where (`region`, normalized), what changes (`kind` + `affects`),

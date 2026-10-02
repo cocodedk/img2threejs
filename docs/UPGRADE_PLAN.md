@@ -262,7 +262,7 @@ Modified files:
 - `grimoire/intake/validation_rubric.md` (character suitability branch)
 - `grimoire/feedback/shading_realism.md` (skin/hair/cloth notes)
 - `grimoire/feedback/render_capture.md` (detail close-up + landmark overlay review)
-- `grimoire/review/self_correction.md` (character sub-pass guidance)
+- `grimoire/self_correction.md` (character sub-pass guidance)
 - `forge/stage2_spec/new_pre_spec_assessment.py`
 - `forge/stage2_spec/new_sculpt_spec.py`
 - `forge/stage2_spec/validate_sculpt_spec.py`

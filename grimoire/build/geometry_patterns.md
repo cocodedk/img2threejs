@@ -2,6 +2,12 @@
 
 Use this reference only when implementing a model.
 
+Contents: Geometry Choices · Material Recipes · Material Layer Fields · Local Feature Types · Detail
+Recipes · Character Geometry And Material Recipes · Verification Cues · Hard-won patterns (BMX +
+M9) · Critical Reconstruction Patterns — failure, fix and diagnosis records (Classic Fade, Glock-18
+2.5D, variable-thickness loft, symptom vs cause, loft cavities, trace absorbing parts) · Explode
+contract · Assembly contract · Assembly gate
+
 ## Geometry Choices
 
 - box: flat machinery, furniture, panels, blockout masses

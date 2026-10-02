@@ -7,6 +7,10 @@ object-agnostic** protocol — it applies to any subject (prop, tool, weapon, ve
 botanical, mechanical, character). Domain tracks (CS2 skins, characters) are specializations
 layered *after* this pass, not replacements for it.
 
+Contents: The Rule · Layers 1–8 (identification, form & silhouette, macro → meso → micro, spatial
+relationships, materials (PBR), color & finish, identity features, uncertainty) · Output → where
+each layer lands · Domain specializations
+
 ## The Rule
 
 Describe what is **there**, in a fixed bottom-up order, using controlled 3D vocabulary — not
